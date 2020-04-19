@@ -1,0 +1,40 @@
+# COLORS
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+LIGHTBLUE = (0, 155, 155)
+
+BGCOLOR = LIGHTBLUE
+
+# GAME CONSTANTS
+WIDTH = 480
+HEIGHT = 600
+SCREENSIZE = (WIDTH, HEIGHT)
+TITLE = 'New Game'
+HALF_WIDTH = WIDTH / 2
+HALF_HEIGHT = HEIGHT / 2
+FPS = 30
+FONT = 'arial'
+HS_FILE = 'highscore.txt'
+SPRITESHEET = 'items_spritesheet.png'
+
+PLAT_LAYER = 1
+POWER_LAYER = 1
+PLAYER_LAYER = 2
+ENEMY_LAYER = 2
+
+# Player
+PLAYER_ACCELERATION = 0.6
+PLAYER_FRICTION = -0.12
+GRAVITY = 0.9
+PLAYER_JUMP = 25
+
+# Platforms
+PLAT_LIST = ((20, 550), (50, 350), (70, 100), (50, 250), (220, 550),
+             (380, 400), (400, 500), (270, 300), (150, 50))
+PLAT_COUNT = 10
+
+# Game properties
+POWER_PCT = 7
