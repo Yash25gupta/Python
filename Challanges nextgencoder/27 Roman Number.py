@@ -6,15 +6,9 @@ def numToRoman1(num):
     for i, n in enumerate(num):
         n = int(n)
         a, b, c = romanChar[6 - (i * 2)], romanChar[7 - (i * 2)], romanChar[8 - (i * 2)]
-        if n == 0: txt = ''
-        elif n == 1: txt = a
-        elif n == 2: txt = a * 2
-        elif n == 3: txt = a * 3
+        if n in (0, 1, 2, 3): txt = a * n
         elif n == 4: txt = a + b
-        elif n == 5: txt = b
-        elif n == 6: txt = b + a
-        elif n == 7: txt = b + (a * 2)
-        elif n == 8: txt = b + (a * 3)
+        elif n in (5, 6, 7, 8): txt = b + a * (n - 5)
         elif n == 9: txt = a + c
         out += txt
     return out

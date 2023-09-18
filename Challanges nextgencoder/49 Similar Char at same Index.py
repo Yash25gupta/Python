@@ -1,7 +1,5 @@
 def similarCharAtSameIndex(txt1, txt2):
     txt1, txt2 = txt1.lower(), txt2.lower()
-    
-    # # Code without list Comprehension
     count = 0
     for i in range(min(len(txt1), len(txt2))):
         if txt1[i] == txt2[i]:
