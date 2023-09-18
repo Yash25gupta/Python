@@ -1,0 +1,36 @@
+<MyGrid>
+    # for python: for id
+    fname: fname1
+    lname: lname1
+    email: email1
+
+    GridLayout:
+        cols: 1
+        size: root.width-200, root.height-200
+        pos: 100, 100
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "First Name : "
+            TextInput:
+                id:fname1
+                multiline:False
+
+            Label:
+                text: "Last Name : "
+            TextInput:
+                id: lname1
+                multiline:False
+
+            Label:
+                text: "Email : "
+            TextInput:
+                id: email1
+                multiline:False
+
+        Button:
+            text: "Submit"
+            font_size: 40
+            on_press: root.btnsubmit()
