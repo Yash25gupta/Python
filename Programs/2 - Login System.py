@@ -6,7 +6,6 @@ from tkinter import messagebox as m_box
 
 win = tk.Tk()
 win.title('Login System')
-
 default_frame = ttk.LabelFrame(win)
 signup_frame = ttk.LabelFrame(win)
 login_frame = ttk.LabelFrame(win)

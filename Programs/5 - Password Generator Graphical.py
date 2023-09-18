@@ -3,17 +3,22 @@ import tkinter as tk
 from tkinter import ttk, messagebox as m_box
 mix = number = symbol = l = None
 
-lowers = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
-uppers = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
+lowers = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+          'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+uppers = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+          'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
 nums = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '0')
-symbols = ("@", "#", "$", "%", "+", "\"", "/", "'", "!", "^", "?", ":", ".", "(", ")", "{", "}", "[", "]", "~", "-", "_", "=")
+symbols = ("@", "#", "$", "%", "+", "\"", "/", "'", "!", "^", "?",
+           ":", ".", "(", ")", "{", "}", "[", "]", "~", "-", "_", "=")
 
 win = tk.Tk()
 win.title('Password Generator')
 win.geometry('480x260')
 
+
 def bindfunc(event):
     makepassword()
+
 
 def get_vars():
     global mix, number, symbol, l
@@ -27,6 +32,7 @@ def get_vars():
                 'Warning', 'Password length should lie b/w "6-20".')
     except ValueError:
         m_box.showerror('Value Error', 'Please type digits only.')
+
 
 def makepassword():
     password = ''
@@ -49,7 +55,9 @@ def makepassword():
     pass_label.configure(text='Generated Password : ' + password)
     btn1.configure(text='Generate Password Again')
 
-length_label = ttk.Label(win, text='Number of Character : ', font=('Helvetica', 12, 'bold'))
+
+length_label = ttk.Label(
+    win, text='Number of Character : ', font=('Helvetica', 12, 'bold'))
 length_label.grid(row=0, column=0, sticky=tk.W, padx=20, pady=10)
 
 length_entry_var = tk.StringVar()
@@ -59,15 +67,18 @@ length_entry.bind('<Return>', bindfunc)
 length_entry.focus()
 
 want_num_var = tk.BooleanVar(value=1)
-num = ttk.Checkbutton(win, text='Do you want Numbers in your Password.', variable=want_num_var)
+num = ttk.Checkbutton(
+    win, text='Do you want Numbers in your Password.', variable=want_num_var)
 num.grid(row=1, columnspan=2, padx=20, pady=10, sticky=tk.W)
 
 want_mixcase_var = tk.BooleanVar(value=1)
-case = ttk.Checkbutton(win, text='Do you want Mixed Case in your Password.', variable=want_mixcase_var)
+case = ttk.Checkbutton(
+    win, text='Do you want Mixed Case in your Password.', variable=want_mixcase_var)
 case.grid(row=2, columnspan=2, padx=20, pady=10, sticky=tk.W)
 
 want_symbol_var = tk.BooleanVar(value=1)
-sym = ttk.Checkbutton(win, text='Do you want Symbols in your Password.', variable=want_symbol_var)
+sym = ttk.Checkbutton(
+    win, text='Do you want Symbols in your Password.', variable=want_symbol_var)
 sym.grid(row=3, columnspan=2, padx=20, pady=10, sticky=tk.W)
 
 btn1 = ttk.Button(win, text='Generate Password', command=makepassword)
